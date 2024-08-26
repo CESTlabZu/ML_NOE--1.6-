@@ -69,13 +69,13 @@ T2W_matrix=[50,70,90,110,130]*0.001;
 T2S4_matrix=[0.002, 0.003, 0.004, 0.005];
 
 fs2_matrix=[0.5, 0.8, 1.1, 1.4]*0.003;% comment for type 2
-fs3_matrix = [0.0001, 0.0003, 0.0005];
+fs3_matrix=[0.0001, 0.0003, 0.0005];
 fs4_matrix=[0.0004, 0.0008, 0.0015, 0.003, 0.006];
 fs5_matrix=[0.5, 0.8, 1.1, 1.4]*0.01;
 fm_matrix=[0.5, 0.8, 1.1, 1.4]*0.07;
 
 %varied offset(B0 shift)
-offV_matrix = [-40,-20,0,20,40];
+offV_matrix=[-40,-20,0,20,40];
 
 
 i=1;
@@ -101,7 +101,7 @@ for ii_T1W=1:num_T1W
 % apparent R1W
 R1W_cal_obs=(R1W+(fm*R1M))./(1+fm); 
 
-a25mspulse = runsteadysimgauss(ksw1, ksw2, ksw3, ksw4, ksw5, kmw, fs1, fs2, fs3,fs4, fs5, 1, fm, R1S, R2S1, R2S2, R2S3,R2S4, R2S5, R1W, R2W, R1M, R2M,sep1_4p7T*2*pi,sep2_4p7T*2*pi,sep3_4p7T*2*pi,sep4_4p7T*2*pi, sep5_4p7T*2*pi, pulseduration, gauss, satangle, 1, 2, 1, .00, 1, 1, (k_4p7T+var)*2*pi, 1);
+a25mspulse=runsteadysimgauss(ksw1, ksw2, ksw3, ksw4, ksw5, kmw, fs1, fs2, fs3,fs4, fs5, 1, fm, R1S, R2S1, R2S2, R2S3,R2S4, R2S5, R1W, R2W, R1M, R2M,sep1_4p7T*2*pi,sep2_4p7T*2*pi,sep3_4p7T*2*pi,sep4_4p7T*2*pi, sep5_4p7T*2*pi, pulseduration, gauss, satangle, 1, 2, 1, .00, 1, 1, (k_4p7T+var)*2*pi, 1);
 aa_4p7T_S(:,i)=a25mspulse(:,6);
 
 fm_cal_matrix_S(:,i)=fm;
@@ -125,9 +125,9 @@ end
 
 % Save the following variables as input and target for training.    
 
-DL_Input_training_clean = aa_4p7T_S;
-DL_Output_training = [AREX_amp_matrix_S;AREX_width_matrix_S];
-DL_R1W = R1W_cal_matrix_S;
+DL_Input_training_clean=aa_4p7T_S;
+DL_Output_training=[AREX_amp_matrix_S;AREX_width_matrix_S];
+DL_R1W=R1W_cal_matrix_S;
 
 
 
