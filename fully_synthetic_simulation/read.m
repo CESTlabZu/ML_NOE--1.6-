@@ -1,8 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Simulation Codes for ML NOE(-1.6) imaging using fully
-% synthetic data
-% Please uncomment the required lines of text
+% Simulation Codes for ML NOE(-1.6) imaging using fully synthetic data
+% Please comment the required lines of text if needed
 %
 % Authors: Leqi Yin, Zhongliang Zu
 %
@@ -44,6 +43,7 @@ k_4p7T=[-2000, -1750, -1500, -1250, offset, 1250, 1500,1750,2000]';
 % k_4p7T=k_4p7T';
 satangle=tt*42.6*360*pulseduration;
 
+fs1=0.001;
 fs2=0.003;
 fs3=0.0003;
 ksw1=100;
@@ -56,7 +56,7 @@ kmw=35;
 
 num_T1W=5;
 num_T2W=5;
-%num_fs2=4;% comment for increased loop parameters - type 2
+num_fs2=4;% comment for decreased loop parameters - type 2
 num_fs3=3;
 num_fs4=5;
 num_fs5=4;
@@ -74,7 +74,7 @@ fs4_matrix=[0.0004, 0.0008, 0.0015, 0.003, 0.006];
 fs5_matrix=[0.5, 0.8, 1.1, 1.4]*0.01;
 fm_matrix=[0.5, 0.8, 1.1, 1.4]*0.07;
 
-&varied offset(B0 shift)
+%varied offset(B0 shift)
 offV_matrix = [-40,-20,0,20,40];
 
 
@@ -99,7 +99,6 @@ for ii_T1W=1:num_T1W
                                     fs4=fs4_matrix(ii_fs4);
                           
 % apparent R1W
-%R1W_obs=(R1W+fm*R1M)/(1+fm);
 R1W_cal_obs=(R1W+(fm*R1M))./(1+fm); 
 
 a25mspulse = runsteadysimgauss(ksw1, ksw2, ksw3, ksw4, ksw5, kmw, fs1, fs2, fs3,fs4, fs5, 1, fm, R1S, R2S1, R2S2, R2S3,R2S4, R2S5, R1W, R2W, R1M, R2M,sep1_4p7T*2*pi,sep2_4p7T*2*pi,sep3_4p7T*2*pi,sep4_4p7T*2*pi, sep5_4p7T*2*pi, pulseduration, gauss, satangle, 1, 2, 1, .00, 1, 1, (k_4p7T+var)*2*pi, 1);
@@ -113,7 +112,7 @@ AREX_width_matrix_S(i)=2*sqrt((tt.*42.6*2*pi).^2.*(R2S4+ksw4)/ksw4+(ksw4+R2S4)^2
 X = sprintf("-------------------------------------%d",i);
 disp(X)
 i = i+1;
-                                    end
+
                                 end
                             end
                         end
