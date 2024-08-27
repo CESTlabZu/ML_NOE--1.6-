@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Simulation Codes for ML NOE(-1.6) imaging using fully synthetic data
+% Simulation Code for ML NOE(-1.6) imaging using fully synthetic data
 % Please comment the required lines of text if needed
 %
 % Authors: Leqi Yin, Zhongliang Zu
