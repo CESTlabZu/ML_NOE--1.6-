@@ -74,7 +74,7 @@ fs4_matrix=[0.0004, 0.0008, 0.0015, 0.003, 0.006];
 fs5_matrix=[0.5, 0.8, 1.1, 1.4]*0.01;
 fm_matrix=[0.5, 0.8, 1.1, 1.4]*0.07;
 
-%varied offset(B0 shift)
+% varied offset(B0 shift)
 offV_matrix=[-40,-20,0,20,40];
 
 
