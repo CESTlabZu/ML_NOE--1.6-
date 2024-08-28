@@ -8,7 +8,8 @@
 % Correspondance: zhongliang.zu@vumc.org 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-clear;
+clear
+clc
 
 % tt mean saturation power (uT)
 tt=1;
