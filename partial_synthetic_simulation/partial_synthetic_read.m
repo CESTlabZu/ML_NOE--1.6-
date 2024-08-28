@@ -10,7 +10,8 @@
 clear
 clc
 
-% Load variables of fitted pools for tissue-mimicking data or invivo data
+% Load the file containing the variables of fitted pools for tissue-mimicking
+% data or invivo data, and fm information
 load("")
 
 
@@ -65,7 +66,7 @@ R2S4_matrix=[1/0.002,1/0.003,1/0.004,1/0.005];
 R1M=1/1.5;
 
 % varied offset(B0 shift)
-offV_matrix = [-40,-20,0,20,40];
+offV_matrix=[-40,-20,0,20,40];
 
 % randomly select pools information from 100 voxels; value assigned can be changed
 total_voxels=100;
@@ -99,7 +100,7 @@ for ii_T1W=1:num_T1W
 
                                                                                    
 
- k = k_0 + offV;
+ k=k_0 + offV;
 
  % apparent R1W
  R1W_cal_obs=(R1W_cal+fm_cal*fm*R1M)./(1+fm_cal*fm); 
@@ -110,16 +111,16 @@ for ii_T1W=1:num_T1W
  cal_Lorentzian6_cal=fm_cal*MT_MR;
  cal_eff_cal=R1W_cal_obs.*((k_0)*2*pi).^2./((tt.*42.6*2*pi).^2+((k_0)*2*pi).^2)+R2W_cal.*(tt.*42.6*2*pi).^2./((tt.*42.6*2*pi).^2+((k_0)*2*pi).^2);
  
- sscal = R1W_cal_obs./(cal_eff_cal+cal_Lorentzian2_cal./(1+fm_cal*fm)+cal_Lorentzian4_cal./(1+fm_cal*fm)+cal_Lorentzian5_cal./(1+fm_cal*fm)+cal_Lorentzian6_cal).*(((k_0)*2*pi).^2./((tt.*42.6*2*pi).^2+((k_0)*2*pi).^2));
- sscal_VO = interp1(k_0, sscal,k);
- SS_cal_matrix(:,i) = sscal_VO;
+ sscal=R1W_cal_obs./(cal_eff_cal+cal_Lorentzian2_cal./(1+fm_cal*fm)+cal_Lorentzian4_cal./(1+fm_cal*fm)+cal_Lorentzian5_cal./(1+fm_cal*fm)+cal_Lorentzian6_cal).*(((k_0)*2*pi).^2./((tt.*42.6*2*pi).^2+((k_0)*2*pi).^2));
+ sscal_VO=interp1(k_0, sscal,k);
+ SS_cal_matrix(:,i)=sscal_VO;
 
 
- AREX_amp_matrix(i) = (fs4_cal.*ksw4.*(tt.*42.6*2*pi).^2./((tt.*42.6*2*pi).^2+(R2S4_cal+ksw4)*ksw4));
+ AREX_amp_matrix(i)=(fs4_cal.*ksw4.*(tt.*42.6*2*pi).^2./((tt.*42.6*2*pi).^2+(R2S4_cal+ksw4)*ksw4));
  AREX_width_matrix(i)=2*sqrt((tt.*42.6*2*pi).^2.*(R2S4_cal+ksw4)/ksw4+(ksw4+R2S4_cal)^2);
 
  R1W_cal_matrix(i)=R1W_cal_obs;
- fm_cal_matrix(i)= fm_cal*fm;
+ fm_cal_matrix(i)=fm_cal*fm;
  
 
 
@@ -136,8 +137,8 @@ for ii_T1W=1:num_T1W
 end
 
 % Save the following variables as input and target for training
-DL_Input_training_clean = SS_cal_matrix;
-DL_Output_training = [AREX_amp_matrix;AREX_width_matrix];
-DL_R1W = R1W_cal_matrix;
+DL_Input_training_clean=SS_cal_matrix;
+DL_Output_training=[AREX_amp_matrix;AREX_width_matrix];
+DL_R1W=R1W_cal_matrix;
 
 
