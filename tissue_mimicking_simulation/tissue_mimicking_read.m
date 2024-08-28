@@ -133,7 +133,7 @@ R1W_cal_obs=(R1W+(fm*R1M))./(1+fm);
 a25mspulse = runsteadysimgauss(ksw1, ksw2, ksw3, ksw4, ksw5, kmw, fs1, fs2, fs3,fs4, fs5, 1, fm, R1S, R2S1, R2S2, R2S3,R2S4, R2S5, R1W, R2W, R1M, R2M,sep1_4p7T*2*pi,sep2_4p7T*2*pi,sep3_4p7T*2*pi,sep4_4p7T*2*pi, sep5_4p7T*2*pi, pulseduration, gauss, satangle, 1, 2, 1, .00, 1, 1, k_4p7T*2*pi, 1);
 Zspectra_matrix(:,i)=a25mspulse(:,6);
 
-fm_cal_matrix(i)=fm;
+fm_matrix(i)=fm;
 R1W_cal_matrix(i)=R1W_cal_obs;
 AREX_groundtruth_matrix(:,i)=(fs4.*ksw4.*(tt_4p7T.*42.6*2*pi).^2./((tt_4p7T.*42.6*2*pi).^2+(R2S4+ksw4)*ksw4+ksw4./(R2S4+ksw4).*((k_4p7T+sep4_4p7T)*2*pi).^2));
 
