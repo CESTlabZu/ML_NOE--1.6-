@@ -26,10 +26,10 @@ for i=1:length(Zspectra_matrix)%length of trainingdata
     sig=(1-Zspectra_matrix(:,i));
 
     R1W_AREX=R1W_cal_matrix(i);
-    fm_AREX=fm_cal_matrix(i);
+    fm_AREX=fm_matrix(i);
 
-    x =k_4p7T;
-    beta0= [0.9, 0/2, 560/2,               0.025, -1400/2, 200/2,        0.01, -800/2, 600/2,        0.001, 600/2, 400/2,          0.02, 1400/2, 1200/2,          0.1, 0/2, 10000/2]; % initial test
+    x=k_4p7T;
+    beta0=[0.9, 0/2, 560/2,               0.025, -1400/2, 200/2,        0.01, -800/2, 600/2,        0.001, 600/2, 400/2,          0.02, 1400/2, 1200/2,          0.1, 0/2, 10000/2]; % initial test
     lb=[0.02, -400/2, 120/2,               0, -1600/2, 160/2,             0, -1200/2, 200/2,           0, 400/2, 0/2,                0, 1000/2, 400/2,            0, -1600/2, 4000/2]; % lower bound
     ub=[1, 400/2,4000/2,                    0.2, -1200/2, 1200/2,          0.2,-400/2, 2000/2,         0.2, 800/2, 600/2,            1, 1800/2, 2000/2,         1, 1600/2, 40000/2]; % upper bound
 
@@ -38,7 +38,7 @@ for i=1:length(Zspectra_matrix)%length of trainingdata
 
     Delta=[1];
     options=optimset('lsqcurvefit') ;
-    options = optimset('Display','off','TolFun',1e-8,'TolX',1e-8,'MaxFunEvals',5e4*length(x),'MaxIter',2e5) ;
+    options=optimset('Display','off','TolFun',1e-8,'TolX',1e-8,'MaxFunEvals',5e4*length(x),'MaxIter',2e5) ;
 
     [beta,resnorm,residual,exitflag,output,lambda,jacobian] = ...
         lsqcurvefit(@matsolv, beta0, x, sig, lb, ub, options, Delta) ;
