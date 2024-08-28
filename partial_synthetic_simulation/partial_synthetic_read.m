@@ -56,7 +56,7 @@ fs2_matrix=[0.5, 0.8, 1.1, 1.4];
 fs4_matrix=[0.0004, 0.0008, 0.0015, 0.003, 0.006]; 
 fs5_matrix=[0.5, 0.8, 1.1, 1.4];
 fm_matrix=[0.5, 0.8, 1.1, 1.4];
-fm = mean(fm_matrix);
+fm=mean(fm_matrix);
 
 ksw4=50;
 
