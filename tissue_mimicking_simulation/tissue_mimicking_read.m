@@ -1,7 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Tissue-Mimicking data generation Code for ML NOE(-1.6) imaging
-% Please comment or uncomment the required lines of text if needed
 %
 % Authors: Leqi Yin, Zhongliang Zu
 %
