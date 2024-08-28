@@ -21,6 +21,9 @@ gauss=100;
 % create frequency offset 
 maxf=1000;
 step=25;
+offset=-maxf:step:maxf;
+k_4p7T=[-2000, -1750, -1500, -1250, offset, 1250, 1500,1750,2000]';
+satangle=tt*42.6*360*pulseduration;
 
 % frequency offset of each pool
 sep1_4p7T=3.6*200;  %amide
@@ -38,9 +41,6 @@ R2S5=1/0.0008;
 R1M=1/1.5;
 R2M=1/0.00006;
 
-offset=-maxf:step:maxf;
-k_4p7T=[-2000, -1750, -1500, -1250, offset, 1250, 1500,1750,2000]';
-satangle=tt*42.6*360*pulseduration;
 
 fs1=0.001;
 fs2=0.003;
