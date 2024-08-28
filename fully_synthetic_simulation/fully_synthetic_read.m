@@ -40,7 +40,6 @@ R2M=1/0.00006;
 
 offset=-maxf:step:maxf;
 k_4p7T=[-2000, -1750, -1500, -1250, offset, 1250, 1500,1750,2000]';
-% k_4p7T=k_4p7T';
 satangle=tt*42.6*360*pulseduration;
 
 fs1=0.001;
