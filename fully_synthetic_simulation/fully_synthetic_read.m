@@ -122,8 +122,7 @@ i = i+1;
     end
 end
 
-% Save the following variables as input and target for training.    
-
+% Save the following variables as input and target for training
 DL_Input_training_clean=aa_4p7T;
 DL_Output_training=[AREX_amp_matrix;AREX_width_matrix];
 DL_R1W=R1W_cal_matrix;
