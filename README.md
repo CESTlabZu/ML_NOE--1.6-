@@ -5,7 +5,7 @@ This project focuses on using a Machine Learning (ML) model trained on partially
 
 ![CEST flow chart_NOE-1 6](https://github.com/user-attachments/assets/debdc61d-2865-4eae-80df-cafcb45b59c5)
 
-## Detailed code instruction
+## Detailed instruction for using code and data
 ### Partial Synthetic Simulation
-Find the in vivo data in the main folder. Convert it to 1D 
+Find the file invivo_4p7T invivo_data folder
 
