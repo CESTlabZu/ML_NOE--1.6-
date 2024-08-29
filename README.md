@@ -7,5 +7,6 @@ This project focuses on using a Machine Learning (ML) model trained on partially
 
 ## Detailed instruction for using code and data
 ### Partial Synthetic Simulation
-Find the file invivo_4p7T invivo_data folder
+Find the file **invivo_4p7T_7rats_1D** in the **invivo_data** folder.
+
 
