@@ -96,5 +96,5 @@ for i=1:length(Zspectra_matrix)%length of trainingdata
 end
 
 
-% save the variables mor_AREX_amine, mor_AREX_NOE3p5, mor_MT for partially synthetic data generation
+% save the variables mor_AREX_amine, mor_AREX_NOE3p5, mor_MT, and fm_matrix for partially synthetic data generation
 
