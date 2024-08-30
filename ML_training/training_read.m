@@ -14,7 +14,7 @@ clc;
 tic
 
 % load clean data for training
-load("trainingdata_TM_4p7T_VO_63011_JU5.mat")
+load("")
 
 % training data type, set its value to 1 for Amplitude, 2 for width
 trainingdata = 1;
