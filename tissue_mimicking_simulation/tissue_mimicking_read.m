@@ -154,3 +154,7 @@ i = i+1;
     end
 end
 
+% Save the variables for Zspectra_matrix, fm_matrix, R1W_cal_matrix, and AREX_groundtruth_matrix.
+% These variables are used for the multiple-pool model Lorentzian fit, partially synthetic data simulation, 
+% and measuring the loss between the ML prediction, the multiple-pool model Lorentzian fit, and ground truth.
+
