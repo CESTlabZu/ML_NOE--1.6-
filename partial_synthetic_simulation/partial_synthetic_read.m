@@ -136,6 +136,9 @@ for ii_T1W=1:num_T1W
     end
 end
 
+% Set Nah to 0.9 for training
+SS_cal_SS_cal_matrix(isnan(SS_cal_matrix)) = 0.9;
+
 % Save the following variables as input and target for training
 DL_Input_training_clean=SS_cal_matrix;
 DL_Output_training=[AREX_amp_matrix;AREX_width_matrix];
