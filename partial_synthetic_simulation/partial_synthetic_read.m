@@ -106,7 +106,7 @@ for ii_T1W=1:num_T1W
  R1W_cal_obs=(R1W_cal+fm_cal*fm*R1M)./(1+fm_cal*fm); 
 
  cal_Lorentzian2_cal=fs2_cal*Amine_MR;
- cal_Lorentzian4_cal=(fs4_cal.*ksw4.*(tt.*42.6*2*pi).^2./((tt.*42.6*2*pi).^2+(R2S4_cal+ksw4)*ksw4+ksw4./(R2S4_cal+ksw4).*((k+sep4)*2*pi).^2));
+ cal_Lorentzian4_cal=(fs4_cal.*ksw4.*(tt.*42.6*2*pi).^2./((tt.*42.6*2*pi).^2+(R2S4_cal+ksw4)*ksw4+ksw4./(R2S4_cal+ksw4).*((k_0+sep4)*2*pi).^2));
  cal_Lorentzian5_cal=fs5_cal*NOE3p5_MR;
  cal_Lorentzian6_cal=fm_cal*MT_MR;
  cal_eff_cal=R1W_cal_obs.*((k_0)*2*pi).^2./((tt.*42.6*2*pi).^2+((k_0)*2*pi).^2)+R2W_cal.*(tt.*42.6*2*pi).^2./((tt.*42.6*2*pi).^2+((k_0)*2*pi).^2);
